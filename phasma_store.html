@@ -1,0 +1,227 @@
+<html>
+    <head>
+        <style>
+            .item{
+                display: block;
+                background-color:lightcoral;
+                text-align: center;
+                padding-top: 15px;
+                padding-bottom: 15px; 
+                color:rgba(94, 11, 87, 0.863);
+            }
+            .right-inf{
+                display: block;
+                float: right;
+                background-color: dimgray;
+                color: hotpink;
+                width: 230px;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .action{
+                border: 1px solid rgba(82, 39, 4, 0.527);
+                width: 100%;
+                height: 30px;
+                background-color: bisque;
+            }
+            .items{
+                display: inline-block;
+                width: 1650px;
+                height: 500px;
+            }
+            .inventory-cont{
+                display: inline-block;
+                font-family: Arial, Helvetica, sans-serif;
+                width: 150px;
+                margin-left: 70px;
+                margin-bottom: 50px;
+            }
+            #head{
+                text-align: center;
+                color: rgb(218, 90, 111);
+                font-size: 30px;
+            }
+            .head-items{
+                color:crimson;
+                font-size: 20px;
+                margin-bottom: 10px;
+            }
+            .inventory-list ul{
+                list-style-type: none;
+                padding-left: 5px;
+            }
+            .inventory-list li{
+                margin-bottom: 5px;
+            }
+            #balance{
+                padding: 5px;
+                color: aquamarine;
+            }
+            body{
+                background-color: rgb(218, 185, 142);
+            }
+            .item .overlay{
+                display:none;
+                position: absolute;
+                background-color: rgb(180, 238, 104);
+                font-size: 23px;
+                
+            }
+            .item:hover .overlay{
+                display: block;
+                width: 250px;
+                top: 40px; 
+                right: 8px;
+            }
+            p{
+                margin: 0px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="body-content">
+            <div id="head">Могозинъ</div>
+            <div id="boo" class="right-inf">
+                <div id="balance">Баланс: 1000</div>
+                <div class="inventory-list"> <ul>
+                    <li id="video_camera_available">Видеокамера: 0</li>
+                    <li id="lazer_projector_available">Лазерный проектор: 0</li>
+                    <li id="detector_EMP_available">Детектор ЭМП: 0</li>
+                    <li id="flashlight_available">Фонарь: 0</li>
+                    <li id="notepad_available">Блокнот: 0</li>
+                    <li id="radio_receiver_available">Радиоприёмник: 0</li>
+                    <li id="uv_flashlight_available">УФ-фонарь: 0</li>
+                    <li id="camera_available">Фотокамера: 0</li>
+                    <li id="candle_available">Свеча: 0</li>
+                    <li id="crucifixion_available">Распятие: 0</li>
+                    <li id="uv_lamp_available">УФ-палочка: 0</li>
+                    <li id="lighter_available">Зажигалка: 0</li>
+                    <li id="motion_sensor_available">Датчик движения: 0</li>
+                    <li id="directional_microphone_available">Н. микрофон: 0</li>
+                    <li id="salt_available">Соль: 0</li>
+                    <li id="sedative_available">Успокоительное: 0</li>
+                    <li id="incense_available">Благовоние: 0</li>
+                    <li id="sound_sensor_available">Датчик звука: 0</li>
+                    <li id="powerful_flashlight_available">Мощный фонарь: 0</li>
+                    <li id="thermometer_available">Термометр: 0</li>
+                    <li id="tripod_available">Штатив: 0</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="items">
+                <div class="main-items">
+                    <div class="head-items">ОСНОВНОЕ СНАРЯЖЕНИЕ</div>
+                    <div id="video_camera" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Видеокамера</p><div class="overlay"><p>Эта DSLR -камера предназначена для видеосъёмки паранормальных явлений. Полученное видео транслируется на монитор в вашем фургоне.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(video_camera); Ciri.invAvailable('video_camera_available',video_camera)">купитъ: 50</button>
+                        <button class="action" onclick="Ciri.sell(video_camera); Ciri.invAvailable('video_camera_available',video_camera)">продатъ: 25</button>
+                    </div>
+                    <div id="laser_projector" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Лазерный проектор</p><div class="overlay"><p>Лазерный проектор позволяет обнаружить передвижения призраков, подсвечивая любых сущностей в радиусе действия.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(laser_projector); Ciri.invAvailable('lazer_projector_available',laser_projector)">купитъ: 50</button>
+                        <button class="action" onclick="Ciri.sell(laser_projector); Ciri.invAvailable('lazer_projector_available',laser_projector)">продатъ: 25</button>
+                    </div>
+                    <div id="detector_EMP" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Детектор ЭМП</p><div class="overlay"><p>Детектор электромагнитного поля (ЭМП) - устройство, позволяющее обнаружить колебания электромагнитных полей, вызванные паранормальной активностью. Он начнёт издавать всё более громкие звуки по мере приближения к источнику.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(detector_EMP); Ciri.invAvailable('detector_EMP_available',detector_EMP)">купитъ: 70</button>
+                        <button class="action" onclick="Ciri.sell(detector_EMP); Ciri.invAvailable('detector_EMP_available',detector_EMP)">продатъ: 35</button>
+                    </div>
+                    <div id="flashlight" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Фонарь</p><div class="overlay"><p>Фонарик - базовый инструмент в инвентаре любого охотника. Когда свет меркнет, фонарик становится особенно полезен.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(flashlight); Ciri.invAvailable('flashlight_available',flashlight)">купитъ: 20</button>
+                        <button class="action" onclick="Ciri.sell(flashlight); Ciri.invAvailable('flashlight_available',flashlight)">продатъ: 10</button>
+                    </div>
+                    <div id="notepad" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Блокнот</p><div class="overlay"><p>Некоторые виды призраков могут общаться посредством письма в блокноте, если тот расположен неподалёку. Данный процесс называется автоматическим письмом.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(notepad); Ciri.invAvailable('notepad_available',notepad)">купитъ: 100</button>
+                        <button class="action" onclick="Ciri.sell(notepad); Ciri.invAvailable('notepad_available',notepad)">продатъ: 50</button>
+                    </div>
+                    <div id="radio_receiver" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Радиоприёмник</p><div class="overlay"><p>Радиоприёмник позволяет засечь проявления электронного феномена и позволит вам общаться с призраками.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(radio_receiver); Ciri.invAvailable('radio_receiver_available',radio_receiver)">купитъ: 80</button>
+                        <button class="action" onclick="Ciri.sell(radio_receiver); Ciri.invAvailable('radio_receiver_available',radio_receiver)">продатъ: 40</button>
+                    </div>
+                    <div id="uv_flashlight" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>УФ-фонарь</p><div class="overlay"><p>Ультрафиолетовый фонарик проявит любые следы призраков и является одним из важнейших инструментов охотников за призраками.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(uv_flashlight); Ciri.invAvailable('uv_flashlight_available',uv_flashlight)">купитъ: 40</button>
+                        <button class="action" onclick="Ciri.sell(uv_flashlight); Ciri.invAvailable('uv_flashlight_available',uv_flashlight)">продатъ: 20</button>
+                    </div>
+                
+                </div>
+                <div class="additional-items">
+                    <div class="head-items">ДОПОЛНИТЕЛЬНОЕ СНАРЯЖЕНИЕ</div>
+                    <div id="camera" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Фотокамера</p><div class="overlay"><p>Эта камера настроена так, чтобы вы смогли запечатлеть паранормальные явления. Воспользуйтесь ей для получения дополнительных улик.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(camera); Ciri.invAvailable('camera_available',camera)">купитъ: 50</button>
+                        <button class="action" onclick="Ciri.sell(camera); Ciri.invAvailable('camera_available',camera)">продатъ: 25</button>
+                    </div>
+                    <div id="саndle" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Свеча</p><div class="overlay"><p>Свечи - отличный источник света, не требующий электричества.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(candle); Ciri.invAvailable('candle_available',candle)">купитъ: 15</button>
+                        <button class="action" onclick="Ciri.sell(candle); Ciri.invAvailable('candle_available',candle)">продатъ: 7</button>
+                    </div>
+                    <div id="crucifixion" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Распятие</p><div class="overlay"><p>Распятие используется, чтобы призрак не мог обрести физическую форму и атаковать вас. Их советуется бросать на пол возле призрака.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(crucifixion); Ciri.invAvailable('crucifixion_available',crucifixion)">купитъ: 20</button>
+                        <button class="action" onclick="Ciri.sell(crucifixion); Ciri.invAvailable('crucifixion_available',crucifixion)">продатъ: 10</button>
+                    </div>
+                    <div id="uv_lamp" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>УФ-палочка</p><div class="overlay"><p>Неоновая палочка может заменить УФ-фонарик или обычный фонарь.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(uv_lamp); Ciri.invAvailable('uv_lamp_available',uv_lamp)">купитъ: 40</button>
+                        <button class="action" onclick="Ciri.sell(uv_lamp); Ciri.invAvailable('uv_lamp_available',uv_lamp)">продатъ: 20</button>
+                    </div>
+                    <div id="lighter" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Зажигалка</p><div class="overlay"><p>Простая зажигалка нужна для того, чтобы зажигать свечи и поджигать благовония.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(lighter); Ciri.invAvailable('lighter_available',lighter)">купитъ: 10</button>
+                        <button class="action" onclick="Ciri.sell(lighter); Ciri.invAvailable('lighter_available',lighter)">продатъ: 5</button>
+                    </div>
+                    <div id="motion_sensor" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Датчик движения</p><div class="overlay"><p>Датчик движения реагирует на любые мельчайшие движения поблизости. </p></div></div>
+                        <button class="action" onclick="Ciri.buy(motion_sensor); Ciri.invAvailable('motion_sensor_available',motion_sensor)">купитъ: 100</button>
+                        <button class="action" onclick="Ciri.sell(motion_sensor); Ciri.invAvailable('motion_sensor_available',motion_sensor)">продатъ: 50</button>
+                    </div>
+                    <div id="directional_microphone" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Н. микрофон</p><div class="overlay"><p>С его помощью можно обнаружить паранормальные источники звуков через стены на большом расстоянии. Это портативная версия датчика звука.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(directional_microphone); Ciri.invAvailable('directional_microphone_available',directional_microphone)">купитъ: 100</button>
+                        <button class="action" onclick="Ciri.sell(directional_microphone); Ciri.invAvailable('directional_microphone_available',directional_microphone)">продатъ: 50</button>
+                    </div>
+                    <div id="salt" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Соль</p><div class="overlay"><p>Соль токсична для большинства призраков, а подсветив рассыпанную соль УФ-фонариком, вы сможете увидеть следы перемещений призрака.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(salt); Ciri.invAvailable('salt_available',salt)">купитъ: 30</button>
+                        <button class="action" onclick="Ciri.sell(salt); Ciri.invAvailable('salt_available',salt)">продатъ: 15</button>
+                    </div>
+                    <div id="sedative" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Успокоительное</p><div class="overlay"><p>Успокоительное  восстановит ваш рассудок и очень пригодиться при исследовании больших территории, позволяя вам дольше оставаться в безопасности.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(sedative); Ciri.invAvailable('sedative_available',sedative)">купитъ: 40</button>
+                        <button class="action" onclick="Ciri.sell(sedative); Ciri.invAvailable('sedative_available',sedative)">продатъ: 20</button>
+                    </div>
+                    <div id="incense" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Благовоние</p><div class="overlay"><p>Если зажечь благовония возле призрака, он не сможет атаковать вас в течении некоторого времени.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(incense); Ciri.invAvailable('incense_available',incense)">купитъ: 20</button>
+                        <button class="action" onclick="Ciri.sell(incense); Ciri.invAvailable('incense_available',incense)">продатъ: 10</button>
+                    </div>
+                    <div id="sound_sensor" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Датчик звука</p><div class="overlay"><p>Датчик звука способен уловить мельчайшие вибрации и засечь даже самые тихие звуки. Полученные данные отображаются на мониторе в фургоне.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(sound_sensor); Ciri.invAvailable('sound_sensor_available',sound_sensor)">купитъ: 80</button>
+                        <button class="action" onclick="Ciri.sell(sound_sensor); Ciri.invAvailable('sound_sensor_available',sound_sensor)">продатъ: 40</button>
+                    </div>
+                    <div id="powerful_flashlight" class="inventory-cont">
+                        <div  class="item"><p>Мощный фонарь</p><div class="overlay"><p>Улучшенная версия обычного фонарика способна осветить большую территорию в отсутствие света.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(powerful_flashlight); Ciri.invAvailable('powerful_flashlight_available',powerful_flashlight)">купитъ: 50</button>
+                        <button class="action" onclick="Ciri.sell(powerful_flashlight); Ciri.invAvailable('powerful_flashlight_available',powerful_flashlight)">продатъ: 20</button>
+                    </div>
+                    <div id="thermometer" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Термометр</p><div class="overlay"><p>Считывая температуру каждой комнаты при помощи термометра, вы обнаружите призрака быстрее</p></div></div>
+                        <button class="action" onclick="Ciri.buy(thermometer); Ciri.invAvailable('thermometer_available',thermometer)">купитъ: 60</button>
+                        <button class="action" onclick="Ciri.sell(thermometer); Ciri.invAvailable('thermometer_available',thermometer)">продатъ: 30</button>
+                    </div>
+                    <div id="tripod" class="inventory-cont">
+                        <div  class="item" onmouseover="changeItem('boo')" onmouseout="rechangeItem('boo')"><p>Штатив</p><div class="overlay"><p>На штатив можно поместить видеокамеру.</p></div></div>
+                        <button class="action" onclick="Ciri.buy(tripod); Ciri.invAvailable('tripod_available',tripod)">купитъ: 25</button>
+                        <button class="action" onclick="Ciri.sell(tripod); Ciri.invAvailable('tripod_available',tripod)">продатъ: 12</button>
+                    </div>
+                </div>  
+            </div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
